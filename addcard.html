@@ -1,0 +1,260 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Shopping Cart</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <!-- Navbar -->
+    <header>
+        <div class="logo">
+            <img src="logo.jpg" alt="Landing page logo" width="50px" class="log-img">
+        </div>
+        <ul class="navbar">
+            <li><a href="buyer.html">Home</a></li>
+            <li><a href="buyer.html#wel">About</a></li>
+            <li><a href="buyer.html#Products">Products</a></li>
+
+            <li><a href="buyer.html#Services">Services</a></li>
+            <li><a href="buyer.html#contact">Contact</a></li>
+        </ul>
+        <form class="d-flex">
+            <input class="form-control mx-2 search" type="search" placeholder= "&nbsp search" aria-label="search">
+            <button class="btn1" type="Submit">search</button>
+            <img src="bag.svg" class="bag">
+        </form>
+    </header>
+
+    <h2>Your Shopping Cart</h2>
+    <table>
+        <thead>
+            <tr>
+                <th>Image</th>
+                <th>Product Name</th>
+                <th>Price</th>
+                <th>Quantity</th>
+                <th>Total</th>
+                <th>Action</th>
+            </tr>
+        </thead>
+        <tbody id="cart-items"></tbody>
+    </table>
+    <table id="cart-table">
+        <tbody></tbody>
+    </table>
+
+    <h3 id="cart-total">Total: Rs 0</h3>
+   <!---- <button class="but-9" onclick="button" >Buy Now</button>
+
+    <button class="but-9" onclick="window.location.href='payment.html'">Buy Now</button>-->
+    <a href="paymet.html">
+        <button class="but-9">Buy Now</button>
+    </a>
+    
+
+    <!-- Footer Section -->
+    <footer id="contact">
+        <div class="footer">
+            <div class="container-1">
+                <div class="row">
+                    <!-- Column 1 -->
+                    <div class="footer-col-1">
+                        <h3>Download our App</h3>
+                        <p>Download App for Android and iOS mobile phone.</p>
+                        <div class="app-logo">
+                            <img src="https://images.seeklogo.com/logo-png/27/2/google-play-store-logo-png_seeklogo-270440.png">
+                            <img src="https://1000logos.net/wp-content/uploads/2020/08/apple-app-store-logo.jpg">
+                        </div>
+                    </div>
+
+                    <!-- Column 2 -->
+                    <div class="footer-col-2">
+                        <img src="logo.jpg" width="125px">
+                        
+                        <div>
+                        <p>VR Green Fram is the best organic products</p>
+                    </div>
+                    </div>
+
+
+                    <!-- Column 3 -->
+                    <div class="footer-col-3">
+                        <h3>Useful Links</h3>
+                        <ul>
+                            <li>Payment & tax</li>
+                            <li>Terms of use</li>
+                            <li>My Account</li>
+                            <li>Return Policy</li>
+                        </ul>
+                    </div>
+
+                    <!-- Column 4 -->
+                    <div class="footer-col-4">
+                        <h3>Follow Us</h3>
+                        <ul>
+                            <li>Facebook</li>
+                            <li>Instagram</li>
+                            <li>YouTube</li>
+                            <li>LinkedIn</li>
+                        </ul>
+                    </div>
+                    <div id="cop">
+                </div>
+                <hr>
+               <p class="copyright">Copyright 2025 - VR Green Farm</p></div>
+            </div>
+        </div>
+    </footer>
+    
+
+    <script src="script.js">
+    
+//         //card
+// document.addEventListener("DOMContentLoaded", function () {
+//     // Select all "Add to Cart" buttons
+//     let addToCartButtons = document.querySelectorAll(".add-to-cart-alex-jones");
+
+//     addToCartButtons.forEach(button => {
+//         button.addEventListener("click", function () {
+//             let product = this.parentElement;
+//             let productName = product.querySelector("h3").textContent;
+//             let productPrice = product.querySelector("p:nth-of-type(3)").textContent.replace("Price:Rs ", "");
+//             let productImage = product.querySelector("img").src;
+//             let quantity = product.querySelector(".quantity-input-john-doe").value;
+
+//             let cartItems = JSON.parse(localStorage.getItem("cart")) || [];
+
+//             // Check if product already in cart, update quantity
+//             let existingItem = cartItems.find(item => item.name === productName);
+//             if (existingItem) {
+//                 existingItem.quantity = parseInt(existingItem.quantity) + parseInt(quantity);
+//             } else {
+//                 cartItems.push({
+//                     name: productName,
+//                     price: productPrice,
+//                     image: productImage,
+//                     quantity: quantity
+//                 });
+//             }
+
+//             // Save to localStorage
+//             localStorage.setItem("cart", JSON.stringify(cartItems));
+
+//             alert("Added to Cart!");
+//             //console.log(cartItems);
+//         });
+//     });
+
+//     // Function to display cart items
+//     function displayCart() {
+//         let cartTable = document.getElementById("cart-items");
+//         let cartTotal = document.getElementById("cart-total");
+//         let cartItems = JSON.parse(localStorage.getItem("cart")) || [];
+
+//         cartTable.innerHTML = "";
+//         let totalPrice = 0;
+
+//         cartItems.forEach((item, index) => {
+//             let row = `
+//                 <tr>
+//                     <td><img src="${item.image}" width="50"></td>
+//                     <td>${item.name}</td>
+//                     <td>Rs ${item.price}</td>
+//                     <td>${item.quantity}</td>
+//                     <td>Rs ${item.price * item.quantity}</td>
+//                     <td><button onclick="removeItem(${index})">Remove</button></td>
+//                 </tr>
+//             `;
+//             cartTable.innerHTML += row;
+//             totalPrice += item.price * item.quantity;
+//         });
+
+//         cartTotal.textContent = `Total: Rs ${totalPrice}`;
+//     }
+
+//     // Function to remove an item
+//     window.removeItem = function (index) {
+//         let cartItems = JSON.parse(localStorage.getItem("cart")) || [];
+//         cartItems.splice(index, 1);
+//         localStorage.setItem("cart", JSON.stringify(cartItems));
+//         displayCart();
+//     };
+
+//     // If on the cart page, display cart items
+//     if (document.getElementById("cart-items")) {
+//         displayCart();
+//     }
+// });
+
+</script>
+<script>
+    // // Retrieve cart items from localStorage
+    // let cart = JSON.parse(localStorage.getItem("cart")) || [];
+
+    // // Display cart items
+    // const cartItems = document.getElementById("cart-items");
+    // let total = 0;
+
+    // cart.forEach(item => {
+    //     const row = document.createElement("tr");
+    //     row.innerHTML = `
+    //         <td><img src="${item.image}" alt="${item.name}" width="50"></td>
+    //         <td>${item.name}</td>
+    //         <td>Rs ${item.price}</td>
+    //         <td>${item.quantity}</td>
+    //         <td>Rs ${item.price * item.quantity}</td>
+    //         <td><button onclick="removeFromCart(${item.id})">Remove</button></td>
+    //     `;
+    //     cartItems.appendChild(row);
+    //     total += item.price * item.quantity;
+    // });
+
+    // // Update total
+    // document.getElementById("cart-total").textContent = `Total: Rs ${total}`;
+
+    // // Remove item from cart
+    // function removeFromCart(productId) {
+    //     cart = cart.filter(item => item.id !== productId);
+    //     localStorage.setItem("cart", JSON.stringify(cart));
+    //     location.reload(); // Refresh the page to update the cart
+    // }
+
+
+
+
+
+    let cart = JSON.parse(localStorage.getItem("cart")) || [];
+console.log("Cart data retrieved from localStorage:", cart);
+
+// Display cart items
+const cartItems = document.getElementById("cart-items");
+let total = 0;
+
+cart.forEach((item, index) => {
+    const row = document.createElement("tr");
+    row.innerHTML =`
+        <td><img src="${item.image}" alt="${item.name}" width="50"></td>
+        <td>${item.name}</td>
+        <td>Rs ${item.price}</td>
+        <td>${item.quantity}</td>
+        <td>Rs ${item.price * item.quantity}</td>
+        <td><button onclick="removeFromCart(${index})">Remove</button></td>
+    `;
+    cartItems.appendChild(row);
+    total += item.price * item.quantity;
+});
+
+// Update total
+document.getElementById("cart-total").textContent = `Total: Rs ${total}`;
+
+// Remove item from cart
+function removeFromCart(index) {
+    cart.splice(index, 1); // Remove the item at the specified index
+    localStorage.setItem("cart", JSON.stringify(cart));
+    location.reload(); // Refresh the page to update the cart
+}
+</script>
+</body>
+</html>

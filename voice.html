@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Welcome To VR Green Farm</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        body {
+            font-family: Arial, sans-serif;
+            display: flex;
+            justify-content: flex-end;
+            align-items: center;
+            height: 100vh;
+            background: #000;
+            overflow: hidden;
+            position: relative;
+        }
+        /*back ground*/
+        video{
+            position: absolute;
+            top:0;
+            left:0;
+            width:100%;
+            height: 100%;
+            object-fit: cover;
+            z-index: -1;
+        }
+        /*form container*/
+        .form-container{
+            background: rgba(255,255,255,0.9);
+            padding: 30px;
+            border-radius: 8px;
+            box-shadow: 0 8px 15px rgba(0, 0, 0, 0.1);
+            text-align: center;
+            max-width: 350px;
+            width: 100%;
+            margin-right: 50px;
+            z-index: 2;
+        }
+        .form-container h2{
+            color:#333;
+            margin-bottom: 15px;
+        }
+
+        .form-container input {
+            width: 100%;
+            padding: 10px;
+            margin: 10px 0;
+            border-radius: 5px;
+            border: 1px solid #ccc;
+        }
+
+        .btn {
+            padding: 10px 20px;
+            background: #3498db;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            margin-top: 10px;
+            width: 100%;
+        }
+
+        .btn:hover {
+            background: #2980b9;
+        }
+
+        #start-btn {
+            background: #27ae60;
+        }
+
+        #start-btn:hover {
+            background: #2ecc71;
+        }
+        /* Responsive Design*/
+        @media(max-width:768px) {
+        body{
+            justify-self: center;
+        }
+        .form-container{
+            margin-right: 0;
+            width: 90%;
+        }  
+        }
+    </style>
+</head>
+<body>
+    <!--backgroundvideo-->
+    <video autoplay loop muted>
+        <source src="backgroundvideo.mov" type="video/mp4">
+        your browser doesnot support the video tag.
+
+    </video>
+    <div class="form-container">
+        <h2>Login in Form</h2>
+        <form id="voice-form">
+            <input type="text" id="name" placeholder="Enter your name" />
+            <input type="tel" id="phone" placeholder="Enter your phone number" />
+            <input type="password" id="password" placeholder="password"/>
+            <!--<input type="email" id="email" placeholder="Enter your email" />-->
+            
+            <button type="button" class="btn" id="submit-btn">Submit</button>
+        </form>
+        <button class="btn" id="start-btn"> Start Voice Input</button>
+    </div>
+
+    <script>
+        const nameInput = document.getElementById('name');
+        const emailInput = document.getElementById('email');
+        const phoneInput = document.getElementById('phone');
+        const startBtn = document.getElementById('start-btn');
+        const submitBtn = document.getElementById('submit-btn');
+
+        let recognition;
+
+        // ✅ Check if Speech Recognition is Supported
+        if ('SpeechRecognition' in window || 'webkitSpeechRecognition' in window) {
+            recognition = new (window.SpeechRecognition || window.webkitSpeechRecognition)();
+            recognition.continuous = false;
+            recognition.interimResults = false;
+            recognition.lang = 'en-US';
+        } else {
+            alert("Your browser does not support Speech Recognition.");
+        }
+
+        // ✅ Start voice recognition with microphone permission
+        async function getMicrophonePermission() {
+            try {
+                await navigator.mediaDevices.getUserMedia({ audio: true });
+                console.log("Microphone access granted");
+                startRecognition();
+            } catch (error) {
+                console.error("Microphone access denied", error);
+                alert("Please allow microphone access for speech recognition.");
+            }
+        }
+
+        startBtn.addEventListener('click', getMicrophonePermission);
+
+        function startRecognition() {
+            if (!recognition) return;
+
+            recognition.start();
+            console.log("Listening...");
+        }
+
+        recognition.onresult = function(event) {
+            let result = event.results[0][0].transcript.toLowerCase();
+            console.log("Recognized:", result);
+            
+            // ✅ Process different input fields
+            if (result.includes('name')) {
+                nameInput.value = result.replace('name', '').trim();
+            } else if (result.includes('password')) {
+                document.getElementById('password').value = result.replace('password', '').trim();
+            }
+            //else if (result.includes('email')) {
+               // result = result.replace('email', '').trim();
+                
+                // ✅ Convert spoken words to correct email format
+               // result = result.replace(/\bat\b/g, '@');   // "at" → "@"
+                //result = result.replace(/\bdot\b/g, '.');  // "dot" → "."
+
+                //emailInput.value = result;
+            else if (result.includes('phone')) {
+                phoneInput.value = result.replace('phone', '').trim();
+            } else if (result.includes('submit')) {
+                submitForm(); // ✅ Auto-submit if "submit" is spoken
+            }
+        };
+
+        recognition.onerror = function(event) {
+            console.error("Speech recognition error:", event.error);
+            alert("Speech recognition error: " + event.error);
+        };
+
+        recognition.onspeechend = function() {
+            recognition.stop();
+            console.log("Speech recognition stopped.");
+        };
+
+        submitBtn.addEventListener('click', submitForm);
+
+        function submitForm() {
+            // Display the alert
+            alert("Form submitted successfully!");
+
+            // Redirect to the next page after alert is dismissed
+            setTimeout(function() {
+                window.location.href = "welcomepage.html"; // Replace with the URL of your next page
+            }, 1000); // Delay for 1 second (optional)
+        }
+    </script>
+
+</body>
+</html>

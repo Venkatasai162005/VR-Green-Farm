@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>VR GREEN FRAM</title>
+    <style>
+        /* Full-Screen Background */
+        .background-section {
+            position: relative;
+            width: 100%;
+            height: 100vh; /* Full screen */
+            background: url('mainpage.jpg') no-repeat center center/cover;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            color: white;
+        }
+
+        /* Dark overlay to enhance readability */
+        .overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.5); /* Adjustable darkness */
+        }
+
+        /* Content inside the section */
+        .content {
+            position: relative;
+            z-index: 1;
+            max-width: 800px;
+        }
+
+        .content h1 {
+            font-size: 48px;
+            margin-bottom: 15px;
+        }
+
+        .content p {
+            font-size: 20px;
+            margin-bottom: 20px;
+        }
+
+        /* Styling for buttons */
+        .btn {
+            display: inline-block;
+            padding: 12px 25px;
+            margin: 10px;
+            border: none;
+            cursor: pointer;
+            font-size: 20px;
+            text-decoration: none;
+            border-radius: 8px;
+            transition: 0.3s;
+        }
+
+        .btn-primary {
+            background: #28a745;
+            color: white;
+        }
+
+        .btn-secondary {
+            background: #007bff;
+            color: white;
+        }
+
+        .btn:hover {
+            opacity: 0.8;
+            transform: scale(1.05);
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Full-Screen Background Section -->
+    <div class="background-section">
+        <div class="overlay"></div> <!-- Dark overlay -->
+        <div class="content">
+            <h1>Welcome to VR Green Farm</h1>
+            <p>High-quality organic products for a healthier life.</p>
+            <a href="farmers.html" class="btn btn-primary">Farmers</a>
+            <a href="buyer.html" class="btn btn-secondary">Buyers</a>
+        </div>
+    </div>
+
+</body>
+</html>

@@ -1,0 +1,204 @@
+!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>VR Green Farm Website</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+    <!-- Header -->
+    <header>
+        <!-- Logo on the Left -->
+        <div class="logo">
+            <img src="logo.jpg" alt="Landing page logo">
+        </div>
+        <nav class="main-nav">
+            <ul>
+                <li><a href="farmers.html" class="nav-link">Home</a></li>
+                <li><a href="myproducts.html" class="nav-link">My Products</a></li>
+                <li><a href="#" class="nav-link">My Transactions</a></li>
+                <li><a href="callcenter.html" class="nav-link">Call Center/ SMS</a></li>
+            </ul>
+        </nav>
+    
+
+        <!-- Settings Dropdown in Navbar -->
+        <nav class="navbar">
+            <ul>
+                <li class="dropdown">
+                    <a href="#">Settings &#9662;</a>
+                    <ul class="dropdown-menu">
+                        <li><a href="#">Profile</a></li>
+                        <li><a href="#">Logout</a></li>
+                    </ul>
+                </li>
+            </ul>
+        </nav>
+    </header>
+    <!-- Navigation Section Below Header -->
+    
+    <!----applicationform-->
+    <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>VR Green Farm</title>
+    
+   
+    <link rel="shortcut icon" href="logo.png" type="image/x-icon">
+
+    <style>
+        
+
+body {
+    font-family: 'Montserrat', sans-serif;
+    background-color: #f4f4f4;
+    background-image: url(bgimg.jpg);
+    background-size: cover;
+    margin: 0;
+    padding: 0;
+    scroll-behavior: smooth;
+}
+.container {
+    width: 100%;
+    max-width: 600px;
+    margin: auto;
+    background: white;
+    padding-top: 10%;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+    border-radius: 18px;
+}
+
+.header {
+    text-align: center;
+}
+
+.mainlogo {
+    width: 80px;
+    margin-bottom: 10px;
+}
+
+.call-form {
+    margin-top: 20px;
+}
+
+.call-form form {
+    display: flex;
+    flex-direction: column;
+}
+
+.call-form label {
+    font-weight: bold;
+    margin-top: 10px;
+}
+
+.call-form input,
+.call-form textarea {
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    width: 100%;
+}
+
+.book-call-btn {
+    margin-top: 15px;
+    padding: 10px;
+    background: #32cd2c;
+    border: none;
+    cursor: pointer;
+    font-weight: bold;
+    text-align: center;
+    text-decoration: none;
+}
+
+.book-call-btn:hover {
+    background: #28f50d;
+}
+
+.contact {
+    text-align: center;
+    margin-top: 20px;
+}
+
+.contact .social-icons img {
+    width: 30px;
+    margin: 0 10px;
+}
+
+.back-btn {
+    display: inline-block;
+    margin-top: 10px;
+    text-decoration: none;
+    color: #333;
+    font-weight: bold;
+}
+
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <header class="header section">
+            <!--<img src="logo.png" alt="Logo" class="mainlogo">-->
+            <!--<h2>Book a Call</h2>
+            <p>Let's discuss your project and how I can help!</p>-->
+        </header>
+
+        <section class="call-form section">
+            <h3>Insert your New Product</h3>
+            <form action="book.php" method="POST">
+                <label for="name">Your Name</label>
+                <input type="text" id="name" name="name" placeholder="Enter name">
+                <label for="phone">Phone Number</label>
+                <input type="tel" id="phone" name="phone" pattern="[0-9]{10}" placeholder="Enter 10-digit number" required>
+
+                <label for="title">Product Title</label>
+                <input type="tit" id="title" name="tite" placeholder="Enter product Title">
+
+                <label for="stock">Product Stock(in kg)</label>
+                <input type="stock" id="stock" name="stock" placeholder="Enter Product Stock">
+                
+
+                <label for="image">Product Image:</label>
+                <input type="file" name="image" id="image" accept="image/*">
+
+                <label for="message">Message</label>
+                <textarea id="message" name="message" rows="4" placeholder=" Message optional"></textarea>
+
+                <a href="insert.html" type="insert" class="book-call-btn">Insert</a>
+            </form>
+        </section>
+        </div>
+<!-- 
+    
+
+
+
+-->
+        
+        <!---footer-->
+    <footer>
+        <div class="payment-section">
+            <h2>Payment Options</h2>
+            
+        </div>
+    
+        <div class="image-section">
+            <img src="paypal.png" alt="Image 1" class="footer-img">
+            <img src="google-pay.png" alt="Image 2" class="footer-img">
+        </div>
+    
+        <div class="social-media">
+            <a href="#"><img src="facebook.png" alt="Facebook"></a>
+            <a href="#"><img src="instagram.png" alt="Instagram"></a>
+            <a href="#"><img src="search.png" alt="Google"></a>
+            <a href="#"><img src="twitter.png" alt="Twitter"></a>
+        </div>
+    </footer>
+    <script src="script.js"></script>
+
+</body>
+</html>

@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Welcome Animation</title>
+    <!--<link href="https://fonts.googleapis.com/css2?family=Pacifico&family=Poppins:wght@600&display=swap" rel="stylesheet">-->
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        body {
+            font-family: Arial, sans-serif;
+            background: url('climate.jpg') no-repeat center center/cover;
+            overflow: hidden;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            position: relative;
+            transition: background 1s ease-in-out;
+        }
+
+        /* Overlay to make background dark initially */
+        .overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.5); /* Dark overlay */
+            z-index: 1;
+            animation: fadeOut 2s forwards 5s; /* Fade out after 4 seconds */
+        }
+
+        /* Welcome Text */
+        .welcome-container {
+            display: flex;
+            font-size: 4rem;
+            font-weight: bold;
+            color: white;
+            position: relative;
+            z-index: 2;
+            opacity: 1;
+            animation: fadeIn 1s ease-in-out forwards, fadeOut 1s forwards 3s;
+        }
+
+        .welcome-left {
+            transform: translateX(-100vw);
+            animation: slideInLeft 1s ease-out forwards;
+        }
+
+        .welcome-right {
+            transform: translateX(100vw);
+            animation: slideInRight 1s ease-out forwards;
+        }
+
+        /* Logo */
+        .logo {
+            width: 100vw;
+            max-height: 100vh;
+            opacity: 0;
+            position: absolute;
+            z-index: 2;
+            animation: fadeIn 2s ease-in-out forwards 4s, fadeOut 1s forwards 7s;
+        }
+        body.fade-out {
+    opacity: 0;
+    transition: opacity 1s ease-out;
+}
+
+
+        /* Animations */
+        @keyframes slideInLeft {
+            0% { transform: translateX(-100vw); }
+            100% { transform: translateX(0); }
+        }
+
+        @keyframes slideInRight {
+            0% { transform: translateX(100vw); }
+            100% { transform: translateX(0); }
+        }
+
+        @keyframes fadeIn {
+            0% { opacity: 0; }
+            100% { opacity: 1; }
+        }
+
+        @keyframes fadeOut {
+            0% { opacity: 1; }
+            100% { opacity: 0; }
+        }
+
+    </style>
+</head>
+<body>
+
+    <!-- Dark Overlay -->
+    <div class="overlay"></div>
+
+    <!-- Welcome Animation -->
+    <div class="welcome-container" id="welcome">
+        <span class="welcome-left">Wel</span>
+        <span class="welcome-right">come</span>
+    </div>
+
+    <!-- Logo -->
+    <img src="logo.jpg" alt="Logo" class="logo" id="logo">
+    <button onclick="window.location.href='home.html'" 
+        style="position: absolute; bottom: 20px; padding: 10px 20px; font-size: 16px; cursor: pointer;">
+    Continue
+</button>
+
+        <script>
+    function goToNextPage() {
+        document.body.classList.add("fade-out"); // Fade effect
+        setTimeout(() => {
+            window.location.href = "main.html";
+        }, 1000); // Wait for fade-out before redirecting
+    }
+
+    setTimeout(goToNextPage, 7000); // Auto-redirect after animation
+</script>
+
+</body>
+</html>

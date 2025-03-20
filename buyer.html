@@ -1,0 +1,388 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>VR Green Farm Website</title>
+    <!-- Link to CSS -->
+    <link rel="stylesheet" href="style.css">
+    <!-- Swiper CSS -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
+</head>
+<body>
+    
+    <!-- Navbar -->
+    <header>
+        
+        <div class="logo">
+            <img src="logo.jpg" alt="Landing page logo" width="50px" class="log-img">
+        </div>
+        <ul class="navbar">
+            <li><a href="#home">Home</a></li>
+            <li><a href="#wel">About</a></li>
+            <li><a href="#Products">Products</a></li>
+
+            <li><a href="#Services">Services</a></li>
+            <li><a href="#contact">Contact</a></li>
+        </ul>
+        <form class="d-flex">
+            <input class="form-control mx-2 search" id="searchInput" type="search" placeholder="&nbsp; search" aria-label="search">
+            <button class="btn1" type="button" onclick="performSearch()">Search</button>
+          <!----  <img src="bag.svg" class="bag" <a href="addcard.html"</a>>-->
+
+                <a href="addcard.html">
+                    <img src="bag.svg" class="bag" alt="Bag Icon">
+                </a>
+                
+
+        </form>
+    </header>
+
+    <!-- Home Section with Swiper -->
+    <section class="home swiper" id="home">
+        <div class="swiper-wrapper">
+            <!-- Slide 1 -->
+            <div class="swiper-slide container">
+                <div class="home-text"></div>
+                <img src="pexels-janetrangdoan-1171170.jpg" alt="">
+            </div>
+
+            <!-- Slide 2 -->
+            <div class="swiper-slide container">
+                <div class="home-text"></div>
+                <img src="pexels-enginakyurt-1435904.jpg" alt="">
+            </div>
+
+            <!-- Slide 3 -->
+            <div class="swiper-slide container">
+                <div class="home-text"></div>
+                <img src="pexels-janetrangdoan-1132047.jpg" alt="">
+            </div>
+        </div>
+
+        <!-- Swiper Navigation Arrows -->
+        <div class="swiper-button-next"></div>
+        <div class="swiper-button-prev" id="wel"></div>
+    </section>
+    <!--welcome-->
+    <!-- Welcome Section -->
+<section class="welcome" >
+    <div class="container2">
+        <div class="welcome-content">
+            <p class="subtitle">Green Agriculture</p>
+            <h1 class="welcome-title">Welcome to VR GREEN FARM</h1>
+            <p class="description">
+                We call it ultimate because we believe every farm should be well presented with high-quality organic products.
+            </p>
+        </div>
+
+        <!-- Cards Section -->
+        <div class="welcome-cards">
+            <!-- Card 1 -->
+            <div class="card">
+                <img src="storefront.svg" alt="Always Fresh">
+                <h2>Always Fresh</h2>
+                <p>Fresh and organic farm products delivered to your doorstep.</p>
+            </div>
+
+            <!-- Card 2 -->
+            <div class="card">
+                <img src="gift.svg" alt="100% Organic">
+                <h2>100% Organic</h2>
+                <p>No pesticides, no chemicals – just pure, healthy food.</p>
+            </div>
+
+            <!-- Card 3 -->
+            <div class="card" id="Products">
+                <img src="flower.svg" alt="Healthy Food">
+                <h2>Healthy Food</h2>
+                <p>We practice eco-friendly farming for a greener future.</p>
+            </div>
+        </div>
+    </div>
+</section>
+<!----product----->
+<h2 class="producttitle" >PRODUCTS</h2>
+
+<div class="container-john-doea">
+        
+    <div class="product-jane-doe">
+        
+        <img src="pexels-enginakyurt-1435904.jpg" alt="Product">
+        <h3>Vegetables</h3>
+        
+        <a href="vegetable.html" class="add-to-cart-alex-jones">More</a>
+    </div>
+    <div class="product-jane-doe">
+        <img src="pexels-janetrangdoan-1171170.jpg" alt="Product">
+        <h3>Fruits</h3>
+        
+        <a href="fruits.html" class="add-to-cart-alex-jones">More</a>
+    </div>
+    
+</div>
+    
+<!-- Discount Section -->
+<section class="discount">
+    <div class="discount-container" id="Services">
+        <div class="discount-content">
+            
+            <h1><img src="money.svg" alt="Discount Icon"> Discount Coupon for -20%: PWE801424</h1>
+            <button class="discount-btn">More Offers</button>
+        </div>
+    </div>
+</section>
+<!-- srevices -->
+<section class="store py-5 bg-light text-center">
+    <div class="container4">
+        <div class="row">
+            <div class="col-lg-6 m-auto">
+                <p class="m-0 store-subtitle">Green Agriculture</p>
+                <h1 class="store-title">Our Best Products</h1>
+                <div class="line my-4"></div>
+                <p class="store-desc">
+                    We believe every farm should be well presented with high-quality organic products.
+                </p>
+            </div>
+        </div>
+
+        <!-- Store Features -->
+        <div class="row store-items">
+            <!-- Free Shipping -->
+            <div class="col-lg-3 col-md-6">
+                <div class="store-card">
+                    <div class="store-card-body">
+                        <img src="truck.svg" alt="Free Shipping">
+                        <h5 class="store-head">Free Shipping</h5>
+                        <p class="store-text">With 100 or more orders. Shop now!</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Quality Products -->
+            <div class="col-lg-3 col-md-6">
+                <div class="store-card">
+                    <div class="store-card-body">
+                        <img src="organic.png" alt="Quality Guaranteed">
+                        <h5 class="store-head">100% Organic</h5>
+                        <p class="store-text">Pure, fresh, and healthy organic food.</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Secure Payment -->
+            <div class="col-lg-3 col-md-6">
+                <div class="store-card">
+                    <div class="store-card-body">
+                        <img src="file-lock.svg" alt="Secure Payment">
+                        <h5 class="store-head">Secure Payment</h5>
+                        <p class="store-text">Safe & secure payment methods available.</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Customer Support -->
+            <div class="col-lg-3 col-md-6">
+                <div class="store-card">
+                    <div class="store-card-body">
+                        <img src="user-check.svg" alt="24/7 Support">
+                        <h5 class="store-head">24/7 Support</h5>
+                        <p class="store-text">Dedicated support for all your queries.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<!--seller-->
+<h2 class="section-title">Best Sellers</h2>
+    <div class="container-john-doe">
+        
+        <div class="product-jane-doe">
+            
+            <img src="lemon.jpg" alt="Product">
+            <h3>Lemon</h3>
+            <p class="quantity-text-alex-jones">Quantity:<br>(in kg)</p>
+            <input type="number" class="quantity-input-john-doe" value="1" min="1" max="10">
+            <p class="rating-michael-smith">★★★★★</p>
+            <p>Price:Rs 20</p>
+            <button class="add-to-cart-alex-jones">Add to Cart</button>
+        </div>
+        <div class="product-jane-doe">
+            <img src="apple.jpg" alt="Product">
+            <h3>Apple</h3>
+            <p class="quantity-text-alex-jones">Quantity:<br>(in kg)</p>
+            <input type="number" class="quantity-input-john-doe" value="1" min="1" max="10">
+            <p class="rating-michael-smith">★★★★☆</p>
+            <p>Price:Rs 50</p>
+            <button class="add-to-cart-alex-jones">Add to Cart</button>
+        </div>
+        <div class="product-jane-doe">
+            <img src="banana2.jpg" alt="Product">
+            <h3>Banana</h3>
+            <p class="quantity-text-alex-jones">Quantity:<br>(in kg)</p>
+            <input type="number" class="quantity-input-john-doe" value="1" min="1" max="10">
+            <p class="rating-michael-smith">★★★☆☆</p>
+            <p>Price:Rs 40</p>
+            <button class="add-to-cart-alex-jones">Add to Cart</button>
+        </div>
+        <div class="product-jane-doe">
+            <img src="barccoli.jpg" alt="Product">
+            <h3>Broccoli</h3>
+            <p class="quantity-text-alex-jones">Quantity:<br>(in kg)</p>
+            <input type="number" class="quantity-input-john-doe" value="1" min="1" max="10">
+            <p class="rating-michael-smith">★★★★☆</p>
+            <p>Price:Rs 30</p>
+            <button class="add-to-cart-alex-jones">Add to Cart</button>
+        </div>
+        <div class="product-jane-doe">
+            <img src="tomato.jpg" alt="Product">
+            <h3>Tomatoes</h3>
+            <p class="quantity-text-alex-jones">Quantity:<br>(in kg)</p>
+            <input type="number" class="quantity-input-john-doe" value="1" min="1" max="10">
+            <p class="rating-michael-smith">★★★★★</p>
+            <p>Price:Rs 20</p>
+            <button class="add-to-cart-alex-jones">Add to Cart</button>
+        </div>
+        <div class="product-jane-doe">
+            <img src="chilli.jpg" alt="Product">
+            <h3>Chilli</h3>
+            <p class="quantity-text-alex-jones">Quantity:<br>(in kg)</p>
+            <input type="number" class="quantity-input-john-doe" value="1" min="1" max="10">
+            <p class="rating-michael-smith">★★★☆☆</p>
+            <p>Price:Rs 15</p>
+            <button class="add-to-cart-alex-jones">Add to Cart</button>
+        </div>
+    </div>
+<!---reviews-->
+<!-- Reviews Section -->
+
+<div class="review-container">
+    <h1 class="review">Our Customer Reviews</h1>
+    <div class="review-box">
+        <p id="review-text">Click a customer image below to see their review!</p>
+        
+        <!-- Small clickable images -->
+        <div class="review-images"  id="contact">
+            <img src="sai.jpg" alt="Sai" onclick="showReview('Sai', 'Excellent quality organic products. Highly recommended!', '★★★★★')">
+            <img src="rahul.jpg" alt="Rahul" onclick="showReview('Rahul', 'Fresh and healthy fruits delivered on time!', '★★★★☆')">
+            <img src="vishnu.jpg" alt="Vishnu" onclick="showReview('Vishnu', 'Loved the eco-friendly packaging and quality!', '★★★★★')">
+            <img src="venu.jpg" alt="Venu" onclick="showReview('Venu', 'Great service and customer support!', '★★★★☆')">
+        </div>
+    </div>
+</div>
+<!--contact-->
+<div class="container-3">
+    <div class="contact-details">
+        <h2>Get In Touch</h2>
+        <p>Welcome to VR Green Farm! We are committed to providing the freshest organic produce straight from our farm to your table. Reach out to us for any inquiries or collaborations.</p>
+        <ul>
+            <li><strong>📍</strong>chowdavaram</li>
+            <li><strong>📞</strong> +1 100 104 40001</li>
+            <li><strong>📧</strong> contact@vrgreenfarm.com</li>
+        </ul>
+        <div class="social-icons">
+            <a href="#"><img src="facebook.png" alt="Facebook"></a>
+            <a href="#"><img src="instagram.png" alt="Instagram"></a>
+            <a href="#"><img src="search.png" alt="Google"></a>
+            <a href="#"><img src="twitter.png" alt="Twitter"></a>
+            </div>
+    </div>
+
+    <div class="form-container">
+        <h2>Contact Us</h2>
+        <form>
+            <input type="text" placeholder="Your Name" required>
+            <input type="email" placeholder="Your Email" required>
+            <textarea placeholder="Type Here" rows="4" required></textarea>
+            <button type="submit">Submit</button>
+        </form>
+    </div>
+</div>
+
+    <!-- Footer Section -->
+    <footer id="contact">
+        <div class="footer">
+            <div class="container-1">
+                <div class="row">
+                    <!-- Column 1 -->
+                    <div class="footer-col-1">
+                        <h3>Download our App</h3>
+                        <p>Download App for Android and iOS mobile phone.</p>
+                        <div class="app-logo">
+                            <img src="https://images.seeklogo.com/logo-png/27/2/google-play-store-logo-png_seeklogo-270440.png">
+                            <img src="https://1000logos.net/wp-content/uploads/2020/08/apple-app-store-logo.jpg">
+                        </div>
+                    </div>
+
+                    <!-- Column 2 -->
+                    <div class="footer-col-2">
+                        <img src="logo.jpg" width="125px">
+                        
+                        <div>
+                        <p>VR Green Farm is the best organic products</p>
+                    </div>
+                    </div>
+
+
+                    <!-- Column 3 -->
+                    <div class="footer-col-3">
+                        <h3>Useful Links</h3>
+                        <ul>
+                            <li>Payment & tax</li>
+                            <li>Terms of use</li>
+                            <li>My Account</li>
+                            <li>Return Policy</li>
+                        </ul>
+                    </div>
+
+                    <!-- Column 4 -->
+                    <div class="footer-col-4">
+                        <h3>Follow Us</h3>
+                        <ul>
+                            <li>Facebook</li>
+                            <li>Instagram</li>
+                            <li>YouTube</li>
+                            <li>LinkedIn</li>
+                        </ul>
+                    </div>
+                    <div id="cop">
+                </div>
+                <hr>
+               <p class="copyright">Copyright 2025 - VR Green Farm</p></div>
+            </div>
+        </div>
+    </footer>
+    
+    <!-- Swiper JS -->
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+    <!-- Link to JavaScript -->
+    <!--<script src="script.js"></script>-->
+    <script>
+        var swiper = new Swiper(".home", {
+  spaceBetween: 30,
+  centeredSlides: true,
+  loop: true, // Allows infinite scrolling
+  autoplay: {
+      delay: 3000, // Auto-slide every 3 seconds
+      disableOnInteraction: false, // Keep autoplay running even after user interaction
+  },
+  navigation: {
+      nextEl: ".swiper-button-next", // Right arrow
+      prevEl: ".swiper-button-prev", // Left arrow
+  },
+});
+
+
+function showReview(name, review, rating) {
+        document.getElementById('review-text').innerHTML = `<strong>${name}:</strong> ${review} <br> <span>${rating}</span>`;
+    }
+    </script>
+    
+    <script src="script.js">
+
+    </script>
+    <script src="scripts.js"></script>
+</body>
+</html>

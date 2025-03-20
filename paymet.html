@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>VR Green Farm Website</title>
+   <!---- <link rel="stylesheet" href="style.css">-->
+</head>
+<body>
+
+    <div class="container">
+        <section class="call-form section">
+           <!---- <h3>PAYMENT PROCESS</h3>-->
+            <form action="book.php" method="POST">
+                <div class="name-1">
+                    <h2> Payment Process</h2>
+                    <label for="name">Your Name</label>
+                    <input type="text" id="name" name="name" placeholder="Enter your name" >
+                </div>
+                <div class="name-2">
+                    <label for="phone">Phone Number</label>
+                    <input type="tel" id="phone" name="phone" pattern="[0-9]{10}" placeholder="Enter 10-digit number" >
+                </div>
+                <label for="message">Address</label>
+                <textarea id="message" name="message" rows="5" placeholder="Enter your full address" ></textarea>
+
+                <!-- Payment Methods -->
+                <div class="payment-methods">
+                    <label><input type="radio" name="payment" value="PhonePe"> PhonePe</label>
+                    <label><input type="radio" name="payment" value="Google Pay"> Google Pay</label>
+                    <label><input type="radio" name="payment" value="Paytm"> Paytm</label>
+                </div>
+
+                <!-- Scanner Image & Icons Inside Scanner Box -->
+                <div class="scanner-container">
+                    <img src="scanner1.jpg" class="scanner-img">
+                    <div class="payment-icons">
+                        <img src="paypal.png" alt="PhonePe" class="payment-icon">
+                        <img src="google-pay.png" alt="Google Pay" class="payment-icon">
+                        <img src="paytm.png" alt="Paytm" class="payment-icon">
+                    </div>
+                </div>
+
+                <!-- Submit Button Fixed -->
+                <div class="button-container">
+                    <a href="submit.html" type="submit" class="book-call-btn">Submit</a>
+                </div>
+
+            </form>
+        </section>
+    </div>
+
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 120vh;
+        }
+        h2{
+            margin-top: 15px;
+        }
+        /* Increased Form Length (Vertical Space) */
+        .container {
+            width: 90%;
+            max-width: 700px;
+            background: white;
+            padding: 30px;
+            box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+            border-radius: 10px;
+            height: auto;
+        }
+
+        .name-1, .name-2 {
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+            margin-top: 5px;
+        }
+
+        .call-form {
+            text-align: center;
+        }
+
+        .call-form label {
+            font-weight: bold;
+            display: block;
+            margin-top: 10px;
+            text-align: left;
+            font-size: 1rem;
+        }
+
+        .call-form input, .call-form textarea {
+            width: 100%;
+            padding: 10px;
+            margin-top: 5px;
+            font-size: 1rem;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+
+        /* Payment Methods in One Row */
+        .payment-methods {
+            display: flex;
+            justify-content: space-around;
+            margin-top: 10px;
+            font-size: 1rem;
+        }
+
+        /* Scanner Image and Payment Icons inside the Scanner Box */
+        .scanner-container {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            margin-top: 20px;
+            border: 2px solid #ddd;
+            padding: 15px;
+            border-radius: 10px;
+            background: #fff;
+            width: 100%;
+            max-width: 250px;
+            margin-left: 200px;
+        }
+
+        .scanner-img {
+            width: 100%;
+            max-width: 200px;
+            height: auto;
+            border-radius: 5px;
+        }
+
+        /* Payment Icons below the scanner image */
+        .payment-icons {
+            display: flex;
+            justify-content: center;
+            gap: 5px;
+            margin-top: 10px;
+        }
+
+        .payment-icon {
+            width: 30px;  /* Smaller icons */
+            height: auto;
+        }
+
+        /* Fixing Submit Button */
+        .button-container {
+            display: flex;
+            justify-content: center;
+            margin-top: 20px;
+        }
+
+        .book-call-btn {
+            width: 100%;
+            max-width: 200px;
+            padding: 10px;
+            background: #28a745;
+            color: white;
+            font-weight: bold;
+            font-size: 1rem;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            text-decoration: none;
+        }
+
+        .book-call-btn:hover {
+            background: #218838;
+        }
+
+    </style>
+
+</body>
+</html>

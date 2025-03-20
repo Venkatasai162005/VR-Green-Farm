@@ -1,0 +1,216 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Search Results</title>
+    <link rel="stylesheet" href="style.css">
+    <!-- Swiper CSS -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
+    <style>
+        #searchResults {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 20px;
+            padding: 10%;
+        }
+
+        .product-jane-doe {
+            background: white;
+            padding: 15px;
+            text-align: center;
+            border-radius: 10px;
+            box-shadow: 0 4px 6px rgba(52, 195, 5, 0.1);
+            width: 100%;
+            max-width: 250px;
+        }
+
+        .product-jane-doe img {
+            width: 100%;
+            height: 150px;
+            object-fit: cover;
+            border-radius: 5px;
+        }
+
+        .product-jane-doe h3 {
+            margin: 10px 0;
+        }
+
+        .quantity-text-alex-jones {
+            margin: 5px 0;
+            font-size: 14px;
+        }
+
+        .quantity-input-john-doe {
+            width: 60px;
+            padding: 5px;
+            margin: 5px 0;
+            text-align: center;
+            font-size: 16px;
+        }
+
+        .rating-michael-smith {
+            color: gold;
+        }
+
+        .add-to-cart-alex-jones {
+            background-color: rgb(32, 128, 19);
+            color: white;
+            padding: 10px;
+            border: none;
+            cursor: pointer;
+            border-radius: 5px;
+            margin-top: 10px;
+            
+        }
+
+        .add-to-cart-alex-jones:hover {
+            background-color: #1ce247;
+            
+        }
+    </style>
+</head>
+<body>
+    <header>
+        
+            <div class="logo">
+                <img src="logo.jpg" alt="Landing page logo" width="50px" class="log-img">
+            </div>
+            <ul class="navbar">
+                <li><a href="buyer.html">Home</a></li>
+                <li><a href="buyer.html#wel">About</a></li>
+                <li><a href="buyer.html#Products">Products</a></li>
+    
+                <li><a href="buyer.html#Services">Services</a></li>
+                <li><a href="buyer.html#contact">Contact</a></li>
+            </ul>
+            <form class="d-flex">
+                <!--<input class="form-control mx-2 search" type="search" placeholder= "&nbsp search" aria-label="search">-->
+                <input type="text" id="searchInput" placeholder="Search for a product..." style="padding: 10px; width: 200px;">
+                <button class="btn1" type="button" onclick="performSearch()">Search</button>
+                <!--<button class="btn1" type="Submit">search</button>-->
+                <a href="addcard.html">
+                    <img src="bag.svg" class="bag" alt="Bag Icon">
+                </a>
+            </form>
+        <!--<h1>Search Results</h1>
+        <input type="text" id="searchInput" placeholder="Search for a product..." style="padding: 10px; width: 300px;">
+        <button class="btn1" type="button" onclick="performSearch()">Search</button>-->
+    </header>
+
+    <div id="searchResults">
+      
+    </div>
+    <script src="scripts.js"></script>
+    <script src="script.js"></script>
+    <script>
+        // Function to add event listeners to "Add to Cart" buttons
+        function setupAddToCartButtons() {
+            const addToCartButtons = document.querySelectorAll(".add-to-cart-alex-jones");
+
+            addToCartButtons.forEach(button => {
+                button.addEventListener("click", function () {
+                    addToCart(this); // Pass the button element to the addToCart function
+                });
+            });
+        }
+
+        // Function to fetch product data from the clicked product element
+        function addToCart(button) {
+    // Get the parent product element
+    const productElement = button.closest(".product-jane-doe");
+
+    // Extract product details
+    const product = {
+        id: productElement.querySelector("h3").textContent.toLowerCase().replace(/ /g, "-"), // Generate a unique ID
+        name: productElement.querySelector("h3").textContent,
+        price: parseFloat(productElement.querySelector(".quantity-text-alex-jones").textContent.replace("Price: Rs ", "")),
+        image: productElement.querySelector("img").src,
+        quantity: parseInt(productElement.querySelector(".quantity-input-john-doe").value),
+    };
+
+    // Log the product data for debugging
+    console.log("Product to add:", product);
+
+    // Retrieve the cart from localStorage or initialize an empty array
+    let cart = JSON.parse(localStorage.getItem("cart")) || [];
+    console.log("Current cart:", cart);
+
+    // Check if the product already exists in the cart
+    const existingProduct = cart.find(item => item.id === product.id);
+
+    if (existingProduct) {
+        // Update the quantity if the product already exists
+        existingProduct.quantity += product.quantity;
+        console.log("Updated product in cart:", existingProduct);
+    } else {
+        // Add the new product to the cart
+        cart.push(product);
+        console.log("Added new product to cart:", product);
+    }
+
+    // Save the updated cart back to localStorage
+    localStorage.setItem("cart", JSON.stringify(cart));
+    console.log("Updated cart saved to localStorage:", cart);
+
+    // Notify the user
+    alert(`${product.name} added to cart!`);
+}
+        setupAddToCartButtons();
+    </script>
+    <!-- Footer Section -->
+<footer id="contact">
+    <div class="footer">
+        <div class="container-1">
+            <div class="row">
+                <!-- Column 1 -->
+                <div class="footer-col-1">
+                    <h3>Download our App</h3>
+                    <p>Download App for Android and iOS mobile phone.</p>
+                    <div class="app-logo">
+                        <img src="https://images.seeklogo.com/logo-png/27/2/google-play-store-logo-png_seeklogo-270440.png">
+                        <img src="https://1000logos.net/wp-content/uploads/2020/08/apple-app-store-logo.jpg">
+                    </div>
+                </div>
+
+                <!-- Column 2 -->
+                <div class="footer-col-2">
+                    <img src="logo.jpg" width="125px">
+                    
+                    <div>
+                    <p>VR Green Fram is the best organic products</p>
+                </div>
+                </div>
+
+
+                <!-- Column 3 -->
+                <div class="footer-col-3">
+                    <h3>Useful Links</h3>
+                    <ul>
+                        <li>Payment & tax</li>
+                        <li>Terms of use</li>
+                        <li>My Account</li>
+                        <li>Return Policy</li>
+                    </ul>
+                </div>
+
+                <!-- Column 4 -->
+                <div class="footer-col-4">
+                    <h3>Follow Us</h3>
+                    <ul>
+                        <li>Facebook</li>
+                        <li>Instagram</li>
+                        <li>YouTube</li>
+                        <li>LinkedIn</li>
+                    </ul>
+                </div>
+                <div id="cop">
+            </div>
+            <hr>
+           <p class="copyright">Copyright 2025 - VR Green Farm</p></div>
+        </div>
+    </div>
+</footer>
+
+</body>
+</html>
